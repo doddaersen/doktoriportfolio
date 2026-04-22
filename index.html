@@ -281,14 +281,16 @@
       display:grid;
       gap:4px;
       margin:8px 0 0;
-      padding:8px 0 0 12px;
+      padding:8px 0 0;
       border-top:1px solid var(--border);
-      font-size:12px;
-      line-height:1.4;
+      font-size:14px;
+      line-height:1.38;
     }
 
     .subitem{
       color:var(--text);
+      padding:0;
+      margin:0;
     }
 
     .status-wrap{
@@ -301,7 +303,7 @@
     .status-badge{
       display:inline-flex;
       align-items:center;
-      gap:6px;
+      gap:0;
       font-size:10px;
       font-weight:700;
       line-height:1;
@@ -312,13 +314,7 @@
       color:#fff;
     }
 
-    .status-dot{
-      width:7px;
-      height:7px;
-      border-radius:50%;
-      background:currentColor;
-      box-shadow:0 0 0 1px rgba(255,255,255,.35) inset;
-    }
+    .status-dot{ display:none; }
 
     .progress{
       display:grid;
@@ -476,9 +472,8 @@
               <span class="linkout">↗</span>
             </div>
             <div class="sublist">
-              <div class="subitem">A könyv könyvségéről</div>
-              <div class="subitem">Könyvművészetektől a művészkönyvekig: történeti és fogalmi áttekintés</div>
-              <div class="subitem">Közös nevezőn: a művészkönyv meghatározásának dilemmái</div>
+              <div class="subitem">└─ Könyvművészetektől a művészkönyvekig: történeti és fogalmi áttekintés</div>
+              <div class="subitem">└─ Közös nevezőn: a művészkönyv meghatározásának dilemmái</div>
             </div>
             <div class="status-wrap" data-status-target="konyv_fogalmanak_ujrairasa"></div>
           </a>
@@ -489,8 +484,8 @@
               <span class="linkout">↗</span>
             </div>
             <div class="sublist">
-              <div class="subitem">Tudásszervezés a design és a művészet területén</div>
-              <div class="subitem">A művészkönyvek feltárásának sajátos kihívásai</div>
+              <div class="subitem">└─ Tudásszervezés a design és a művészet területén</div>
+              <div class="subitem">└─ A művészkönyvek feltárásának sajátos kihívásai</div>
             </div>
             <div class="status-wrap" data-status-target="melyik_polcra"></div>
           </a>
@@ -501,9 +496,9 @@
               <span class="linkout">↗</span>
             </div>
             <div class="sublist">
-              <div class="subitem">Anyag, forma, szerkezet</div>
-              <div class="subitem">Párhuzamok a régi könyvek és a művészkönyvek feldolgozásában</div>
-              <div class="subitem">Bibliográfiai modellek és szabványok adaptálása</div>
+              <div class="subitem">└─ Anyag, forma, szerkezet</div>
+              <div class="subitem">└─ Párhuzamok a régi könyvek és a művészkönyvek feldolgozásában</div>
+              <div class="subitem">└─ Bibliográfiai modellek és szabványok adaptálása</div>
             </div>
             <div class="status-wrap" data-status-target="regi_technikak"></div>
           </a>
