@@ -266,18 +266,17 @@
     }
 
     .research-toggle-inner{
-      position:relative;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      justify-content:center;
+      gap:4px;
       width:100%;
-      height:100%;
       max-width:100%;
-      padding:0 16px 0;
+      padding:0 16px;
     }
 
     .research-title{
-      position:absolute;
-      left:50%;
-      top:50%;
-      transform:translate(-50%,-50%);
       display:block;
       width:100%;
       color:#fff;
@@ -289,26 +288,19 @@
       font-size:20px;
       line-height:.96;
       margin:0;
-      pointer-events:none;
     }
 
     .research-desc{
-      position:absolute;
-      left:50%;
-      bottom:2px;
-      transform:translateX(-50%);
       display:block;
-      max-width:92%;
-      width:100%;
-      color:rgba(255,255,255,.76);
+      max-width:86%;
+      color:rgba(255,255,255,.82);
       text-align:center;
-      font-size:11px;
-      line-height:1.15;
-      font-weight:500;
-      text-transform:none;
-      letter-spacing:0;
+      font-size:10px;
+      line-height:1.08;
+      font-weight:600;
+      text-transform:uppercase;
+      letter-spacing:.02em;
       margin:0;
-      pointer-events:none;
     }
 
     .section-toggle:hover{ filter:brightness(.98); }
@@ -621,7 +613,7 @@
         <button class="section-toggle research-toggle" type="button" aria-expanded="false">
           <span class="research-toggle-inner">
             <span class="research-title">KUTATÁS</span>
-            <span class="research-desc">a művészkönyvek könyvtári tudásreprezentációjáról</span>
+            <span class="research-desc">A MŰVÉSZKÖNYVEK KÖNYVTÁRI TUDÁSREPREZENTÁCIÓJÁRÓL</span>
           </span>
         </button>
       </div>
