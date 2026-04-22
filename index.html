@@ -26,6 +26,7 @@
       --radius:8px;
       --shadow:0 4px 10px rgba(0,0,0,.04);
       --tree:#4e4e4e;
+      --soft-pink:#f8edef;
     }
 
     * { box-sizing:border-box; }
@@ -270,11 +271,13 @@
       white-space:nowrap;
     }
 
-    .linkout{
+    .linkout,
+    .sheet-link .arrow{
+      color:var(--magenta);
       flex:0 0 auto;
+      font-weight:700;
       font-size:12px;
       line-height:1;
-      color:var(--muted);
       margin-top:2px;
     }
 
@@ -282,7 +285,7 @@
       display:grid;
       gap:4px;
       margin:8px 0 0;
-      padding:8px 0 0;
+      padding:8px 0 0 16px;
       border-top:1px solid var(--border);
       font-size:14px;
       line-height:1.38;
@@ -358,6 +361,20 @@
 
     .group-title{ margin-bottom:10px; }
 
+    .group-box .group-title,
+    .group-box .file-ext{
+      background:var(--soft-pink);
+      padding:8px 10px;
+      border-radius:6px;
+      display:inline-block;
+      width:100%;
+      box-sizing:border-box;
+    }
+
+    .group-box .file-ext{
+      margin:-6px 0 10px 0;
+    }
+
     .sheet-link{
       display:flex;
       align-items:baseline;
@@ -373,19 +390,6 @@
 
     .sheet-link:first-of-type{ padding-top:0; }
     .sheet-link:last-of-type{ border-bottom:0; padding-bottom:0; }
-
-    .sheet-link .arrow{
-      color:var(--magenta);
-      flex:0 0 auto;
-      font-weight:700;
-    }
-
-    .sheet-status{
-      padding-top:6px;
-      color:var(--muted);
-      font-size:13px;
-      line-height:1.34;
-    }
 
     .status-writing{ background:var(--status-writing); }
     .status-editing{ background:var(--status-editing); color:#4a4a12; }
@@ -412,6 +416,8 @@
       .hero-card{ height:auto; min-height:118px; transform:none; }
       .hero-body{ height:auto; min-height:70px; }
       .card{ min-height:unset; }
+      .title-wrap{ flex-wrap:nowrap; }
+      .file-ext{ white-space:nowrap; }
     }
   </style>
 </head>
@@ -537,6 +543,7 @@
 
           <article class="group-box">
             <h3 class="group-title">ADATMODELL</h3>
+            <div class="file-ext">.xls</div>
 
             <a class="sheet-link" href="https://docs.google.com/spreadsheets/d/1RKhpiXYJ2p-Uj8Ru4dxih3w9XGDNUey2-RhtvvWEuUg/edit?usp=drive_link" target="_blank" rel="noopener noreferrer">
               <span>└─ Adatmodell / struktúra .xls</span><span class="arrow">↗</span>
@@ -569,6 +576,7 @@
 
           <article class="group-box">
             <h3 class="group-title">ONTOLÓGIA</h3>
+            <div class="file-ext">.xls</div>
 
             <a class="sheet-link" href="#" target="_blank" rel="noopener noreferrer">
               <span>└─ Mapping xls</span><span class="arrow">↗</span>
@@ -665,22 +673,11 @@
     }
 
     function progressMarkup(config) {
-      return `
-        <div class="progress">
-          ${orderedStatuses.map((_, index) => `
-            <span class="progress-step ${index < config.order ? 'filled' : ''}" style="--fill:${config.color}"></span>
-          `).join('')}
-        </div>
-      `;
+      return `\n        <div class="progress">\n          ${orderedStatuses.map((_, index) => `\n            <span class="progress-step ${index < config.order ? 'filled' : ''}" style="--fill:${config.color}"></span>\n          `).join('')}\n        </div>\n      `;
     }
 
     function badgeMarkup(config) {
-      return `
-        <span class="status-badge ${config.className}">
-          <span class="status-dot"></span>
-          ${config.label}
-        </span>
-      `;
+      return `\n        <span class="status-badge ${config.className}">\n          <span class="status-dot"></span>\n          ${config.label}\n        </span>\n      `;
     }
 
     function renderStatusBlock(node, value) {
@@ -699,9 +696,7 @@
     function renderBevezetesSubtasks(subtasks) {
       const container = document.getElementById('bevezetes-subtasks');
       if (!container || !Array.isArray(subtasks)) return;
-      container.innerHTML = subtasks.map(item => {
-        return `<div class="subitem">└─ ${item.name}</div>`;
-      }).join('');
+      container.innerHTML = subtasks.map(item => `<div class="subitem">└─ ${item.name}</div>`).join('');
     }
 
     function renderPercent(key, value) {
