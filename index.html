@@ -452,13 +452,13 @@
               <span class="linkout">↗</span>
             </div>
             <div class="sublist" id="bevezetes-subtasks">
-              <div class="subitem">Kutatás célja</div>
-              <div class="subitem">Módszertan</div>
-              <div class="subitem">Tézisek EN</div>
-              <div class="subitem">Tézisek HU</div>
+              <div class="subitem">└─ Kutatás célja</div>
+              <div class="subitem">└─ Módszertan</div>
+              <div class="subitem">└─ Tézisek EN</div>
+              <div class="subitem">└─ Tézisek HU</div>
             </div>
-            <div class="status-wrap" data-status-target="bevezetes"></div>
             <div class="chapter-footer"><span>Készültségi állapot</span><span class="chapter-percent" data-percent-target="bevezetes"></span></div>
+            <div class="status-wrap" data-status-target="bevezetes"></div>
           </a>
         </div>
       </div>
@@ -514,9 +514,9 @@
               <span class="linkout">↗</span>
             </div>
             <div class="sublist">
-              <div class="subitem">13 esettanulmány</div>
-              <div class="subitem">Elemzés, kihívások azonosítása</div>
-              <div class="subitem">Kategorizálási szempontok</div>
+              <div class="subitem">└─ 13 esettanulmány</div>
+              <div class="subitem">└─ Elemzés, kihívások azonosítása</div>
+              <div class="subitem">└─ Kategorizálási szempontok</div>
             </div>
             <div class="status-wrap" data-status-target="vizsgalati_szempontok"></div>
           </a>
@@ -538,17 +538,17 @@
             <h3 class="group-title">ADATMODELL</h3>
 
             <a class="sheet-link" href="https://docs.google.com/spreadsheets/d/1RKhpiXYJ2p-Uj8Ru4dxih3w9XGDNUey2-RhtvvWEuUg/edit?usp=drive_link" target="_blank" rel="noopener noreferrer">
-              <span>Adatmodell / struktúra .xls</span><span class="arrow">↗</span>
+              <span>└─ Adatmodell / struktúra .xls</span><span class="arrow">↗</span>
             </a>
             <div class="sheet-status" data-status-line="adatmodell_struktura">[státusz]</div>
 
             <a class="sheet-link" href="https://docs.google.com/spreadsheets/d/1U0zy34q7uEbvOQ-bO1sJGNpxjH0OyYTDTQiYrNavRUQ/edit?usp=drive_link" target="_blank" rel="noopener noreferrer">
-              <span>Terminológiai szótár .xls</span><span class="arrow">↗</span>
+              <span>└─ Terminológiai szótár .xls</span><span class="arrow">↗</span>
             </a>
             <div class="sheet-status" data-status-line="terminologiai_szotar">[státusz]</div>
 
             <a class="sheet-link" href="https://docs.google.com/spreadsheets/d/1-HJLveKob13v3S-Dwkl5k8qLXWO-TlexUVVaOG8n1Fc/edit?usp=drive_link" target="_blank" rel="noopener noreferrer">
-              <span>Mezőlista / attribútumok .xls</span><span class="arrow">↗</span>
+              <span>└─ Mezőlista / attribútumok .xls</span><span class="arrow">↗</span>
             </a>
             <div class="sheet-status" data-status-line="mezolista_attributumok">[státusz]</div>
           </article>
@@ -570,12 +570,12 @@
             <h3 class="group-title">ONTOLÓGIA</h3>
 
             <a class="sheet-link" href="#" target="_blank" rel="noopener noreferrer">
-              <span>Mapping xls</span><span class="arrow">↗</span>
+              <span>└─ Mapping xls</span><span class="arrow">↗</span>
             </a>
             <div class="sheet-status" data-status-line="ontologiai_mapping">[státusz]</div>
 
             <a class="sheet-link" href="#" target="_blank" rel="noopener noreferrer">
-              <span>Szótár xls</span><span class="arrow">↗</span>
+              <span>└─ Szótár xls</span><span class="arrow">↗</span>
             </a>
             <div class="sheet-status" data-status-line="szotarak_xls">[státusz]</div>
           </article>
@@ -699,8 +699,7 @@
       const container = document.getElementById('bevezetes-subtasks');
       if (!container || !Array.isArray(subtasks)) return;
       container.innerHTML = subtasks.map(item => {
-        const normalized = normalizeStatus(item.status);
-        return `<div class="subitem">${item.name} <span class="muted">[${normalized}]</span></div>`;
+        return `<div class="subitem">└─ ${item.name}</div>`;
       }).join('');
     }
 
