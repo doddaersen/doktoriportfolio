@@ -213,11 +213,62 @@
     }
 
     .research-toggle{
-      padding:12px;
+      padding:14px 42px 14px 14px;
+      justify-content:flex-start;
+      text-align:left;
     }
 
     .research-toggle::after{
       display:none;
+    }
+
+    .research-toggle::before{
+      content:'›';
+      position:absolute;
+      right:14px;
+      top:50%;
+      transform:translateY(-50%);
+      color:#fff;
+      font-family:'Barlow', Arial, Helvetica, sans-serif;
+      font-size:28px;
+      font-weight:700;
+      line-height:1;
+    }
+
+    .research-toggle-inner{
+      display:flex;
+      flex-direction:column;
+      align-items:flex-start;
+      justify-content:center;
+      gap:10px;
+      width:100%;
+      max-width:100%;
+    }
+
+    .research-title{
+      display:block;
+      width:100%;
+      color:#fff;
+      font-family:'Barlow', Arial, Helvetica, sans-serif;
+      font-weight:700;
+      text-transform:uppercase;
+      letter-spacing:.045em;
+      font-size:20px;
+      line-height:.96;
+      margin:0;
+    }
+
+    .research-desc{
+      display:block;
+      max-width:88%;
+      color:#fff;
+      font-size:13px;
+      line-height:1.2;
+      font-weight:500;
+      text-transform:none;
+      letter-spacing:0;
+      opacity:.98;
+      margin:0;
     }
 
     .section-toggle:hover{ filter:brightness(.98); }
@@ -492,6 +543,7 @@
       .card{ min-height:unset; }
       .title-wrap{ flex-wrap:nowrap; }
       .file-ext{ white-space:nowrap; }
+      .research-desc{ max-width:100%; }
     }
   </style>
 </head>
@@ -524,14 +576,12 @@
       <div class="top-spacer" aria-hidden="true"></div>
 
       <div class="column research-column">
-        <button class="section-toggle research-toggle active" data-target="kutatas-panel"><span class="section-label">A KUTATÁS</span></button>
-        <div class="panel open" id="kutatas-panel">
-          <article class="group-box">
-            <div class="line-item">
-              <div class="line-label">↳ a művészkönyvek könyvtári tudásreprezentációjáról szól</div>
-            </div>
-          </article>
-        </div>
+        <button class="section-toggle research-toggle" type="button" aria-expanded="false">
+          <span class="research-toggle-inner">
+            <span class="research-title">A KUTATÁS</span>
+            <span class="research-desc">a művészkönyvek könyvtári tudásreprezentációjáról szól</span>
+          </span>
+        </button>
       </div>
 
       <div class="column content-column">
@@ -764,7 +814,7 @@
   </main>
 
   <script>
-    const buttons = document.querySelectorAll('.section-toggle');
+    const buttons = document.querySelectorAll('.section-toggle[data-target]');
     buttons.forEach(button => {
       button.addEventListener('click', () => {
         const target = document.getElementById(button.dataset.target);
