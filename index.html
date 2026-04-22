@@ -67,40 +67,19 @@
       border:0.5px solid var(--border);
       border-radius:var(--radius);
       background:#fff;
-      overflow:visible;
+      overflow:hidden;
       text-decoration:none;
       color:inherit;
-      transform:rotate(-1.5deg);
-      box-shadow:0 4px 10px rgba(0,0,0,.06);
+      transform:none;
+      box-shadow:none;
       height:118px;
-    }
-
-    .hero-card::before{
-      content:'';
-      position:absolute;
-      inset:0;
-      border-radius:var(--radius);
-      box-shadow:inset 0 1px 0 rgba(255,255,255,.38);
-      pointer-events:none;
-    }
-
-    .hero-shadow{
-      position:absolute;
-      right:8px;
-      bottom:6px;
-      width:36px;
-      height:12px;
-      background:rgba(0,0,0,.12);
-      filter:blur(7px);
-      border-radius:50%;
-      z-index:-1;
-      transform:rotate(-8deg);
     }
 
     .hero-top{
       background:var(--magenta);
       color:#fff;
-      padding:9px 12px 7px;
+      padding:8px 12px;
+      height:40px;
       border-top-left-radius:var(--radius);
       border-top-right-radius:var(--radius);
     }
@@ -111,28 +90,51 @@
       font-family:'Barlow', Arial, Helvetica, sans-serif;
       font-weight:700;
       text-transform:uppercase;
-      letter-spacing:.05em;
-      font-size:12px;
-      line-height:1;
+      letter-spacing:.04em;
+      font-size:10px;
+      line-height:1.05;
     }
-
-    .hero-top .hello{ margin-bottom:2px; }
 
     .hero-body{
       background:#fff;
-      padding:10px 12px 8px;
-      height:calc(100% - 32px - 8px);
+      padding:10px 12px 16px;
+      height:calc(100% - 46px);
       display:flex;
       flex-direction:column;
-      justify-content:space-between;
+      text-align:center;
     }
 
     .hero-name{
       font-family:'Hanken Grotesk', Inter, Arial, Helvetica, sans-serif;
-      font-weight:600;
-      font-size:20px;
-      line-height:1.02;
-      color:var(--text);
+      font-weight:700;
+      font-size:19px;
+      line-height:1.05;
+      letter-spacing:-0.03em;
+      color:#111;
+      text-align:center;
+      white-space:nowrap;
+      margin:9px 0 13px 0;
+    }
+
+    .hero-name .phd-wrap{
+      position:relative;
+      display:inline-block;
+      margin-left:2px;
+    }
+
+    .hero-name .phd{
+      color:#d0d0d0;
+    }
+
+    .hero-name .phd-gif{
+      position:absolute;
+      width:16px;
+      height:16px;
+      object-fit:contain;
+      right:-5px;
+      top:-5px;
+      pointer-events:none;
+      opacity:.75;
     }
 
     .hero-links{
@@ -140,7 +142,7 @@
       gap:12px;
       align-items:center;
       flex-wrap:wrap;
-      margin-top:6px;
+      margin-top:auto;
     }
 
     .hero-links a{
@@ -154,7 +156,7 @@
     .hero-links a:hover{ color:#000; }
 
     .hero-bottom{
-      height:8px;
+      height:6px;
       background:var(--magenta);
       border-bottom-left-radius:var(--radius);
       border-bottom-right-radius:var(--radius);
@@ -439,8 +441,6 @@
     @media (max-width:1560px){
       .matrix{ grid-template-columns:repeat(4,minmax(220px,1fr)); }
       .page{ max-width:1280px; }
-      .hero-card{ transform:none; }
-      .hero-shadow{ display:none; }
     }
 
     @media (max-width:980px){
@@ -451,7 +451,7 @@
     @media (max-width:560px){
       .matrix{ grid-template-columns:1fr; }
       .section-toggle{ min-height:118px; }
-      .hero-card{ height:auto; min-height:118px; transform:none; }
+      .hero-card{ height:auto; min-height:118px; }
       .hero-body{ height:auto; min-height:70px; }
       .card{ min-height:unset; }
       .title-wrap{ flex-wrap:nowrap; }
@@ -464,13 +464,18 @@
     <div class="matrix">
       <div class="column">
         <div class="hero-card">
-          <span class="hero-shadow"></span>
           <div class="hero-top">
             <span class="hello">HELLO</span>
             <span class="name-line">MY NAME IS</span>
           </div>
           <div class="hero-body">
-            <div class="hero-name">Kun Dorottya</div>
+            <div class="hero-name">
+              <span>Dorottya Kun</span>
+              <span class="phd-wrap">
+                <img class="phd-gif" src="https://media1.tenor.com/m/Pq1cZiuhlEEAAAAC/rajinikanth.gif" alt="">
+                <span class="phd">PhD</span>
+              </span>
+            </div>
             <div class="hero-links">
               <a href="https://docs.google.com/document/d/18FXVh4BCtGTkoiGdQIMt8iZiftQctT3OUiI9afmVnI0/edit?usp=drive_link" target="_blank" rel="noopener noreferrer">CV</a>
               <a href="#kontakt">Kontakt</a>
