@@ -14,8 +14,8 @@
       --surface:#ffffff;
       --text:#1f1f1f;
       --muted:#6b6b6b;
-      --border:#d9d9d9;
-      --line:#ebebeb;
+      --border:rgba(0,0,0,.10);
+      --line:#f3f3f3;
       --status-writing:#F26076;
       --status-editing:#FFD150;
       --status-visual:#FF9760;
@@ -23,7 +23,7 @@
       --status-supervisor:#65CCA9;
       --status-done:#458B73;
       --progress-empty:#f3f3f3;
-      --radius:8px;
+      --radius:6px;
       --shadow:0 4px 10px rgba(0,0,0,.04);
       --tree:#4e4e4e;
       --soft-pink:#f8edef;
@@ -64,7 +64,7 @@
     .hero-card{
       display:block;
       position:relative;
-      border:1px solid rgba(0,0,0,.08);
+      border:0.5px solid var(--border);
       border-radius:var(--radius);
       background:#fff;
       overflow:visible;
@@ -162,7 +162,7 @@
 
     .section-toggle{
       appearance:none;
-      border:1px solid var(--border);
+      border:0.5px solid var(--border);
       background:var(--magenta);
       border-radius:var(--radius);
       padding:12px 12px 26px;
@@ -211,7 +211,7 @@
     .panel{
       display:block;
       background:#fff;
-      border:1px solid var(--border);
+      border:0.5px solid var(--border);
       border-radius:var(--radius);
       padding:10px;
     }
@@ -221,7 +221,7 @@
     .card,
     .group-box{
       background:#fff;
-      border:1px solid var(--border);
+      border:0.5px solid var(--border);
       border-radius:var(--radius);
       padding:12px 12px 11px;
       transition:.15s;
@@ -233,14 +233,14 @@
 
     .card:last-child,
     .group-box:last-child{ margin-bottom:0; }
-    .card:hover{ border-color:#bcbcbc; transform:translateY(-1px); }
+    .card:hover{ border-color:rgba(0,0,0,.16); transform:translateY(-1px); }
 
     .card-head{
       display:flex;
       align-items:flex-start;
       justify-content:space-between;
       gap:10px;
-      margin:-12px -12px 8px;
+      margin:-12px -12px 6px;
       padding:12px 12px 10px;
       background:var(--soft-pink);
       border-top-left-radius:var(--radius);
@@ -288,9 +288,9 @@
     .sublist{
       display:grid;
       gap:4px;
-      margin:8px 0 0;
-      padding:8px 0 0 18px;
-      border-top:1px solid var(--border);
+      margin:4px 0 0;
+      padding:0 0 0 18px;
+      border-top:none;
       font-size:14px;
       line-height:1.38;
     }
@@ -303,14 +303,14 @@
 
     .status-wrap{
       order:3;
-      margin-top:16px;
-      padding-top:10px;
-      border-top:1px solid var(--border);
+      margin-top:8px;
+      padding-top:0;
+      border-top:none;
     }
 
     .line-item,
     .official-item{
-      padding:10px 0;
+      padding:8px 0;
       border-bottom:1px solid var(--line);
     }
 
@@ -373,7 +373,7 @@
       display:flex;
       justify-content:flex-end;
       align-items:center;
-      margin-top:8px;
+      margin-top:6px;
       font-size:11px;
       color:var(--muted);
     }
@@ -399,7 +399,7 @@
       align-items:flex-start;
       justify-content:space-between;
       gap:10px;
-      margin:-12px -12px 12px;
+      margin:-12px -12px 10px;
       padding:12px 12px 10px;
       background:var(--soft-pink);
       border-top-left-radius:var(--radius);
@@ -501,7 +501,7 @@
             </div>
             <div class="sublist">
               <div class="subitem">└─ A könyv könyvségéről</div>
-              <div class="subitem">└─ Könyvművészetektől a művészkönyvekig: történeti és fogalmi áttekintés</div>
+              <div class="subitem">└─ Könyvművészetektől a művészkönyvekig: történeti మరియు fogalmi áttekintés</div>
               <div class="subitem">└─ Közös nevezőn: a művészkönyv meghatározásának dilemmái</div>
             </div>
             <div class="status-wrap" data-status-target="konyv_fogalmanak_ujrairasa"></div>
