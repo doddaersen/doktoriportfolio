@@ -131,6 +131,26 @@
       "status": "[státusz] kész? igen/nem",
       "clickup_list_id": "901522877842",
       "drive_url": null
+    },
+    "szakmai_eletut": {
+      "status": "Kész",
+      "clickup_list_id": "901515667958",
+      "drive_url": null
+    },
+    "publikacios_jegyzek": {
+      "status": "Írás",
+      "clickup_list_id": "901515667958",
+      "drive_url": null
+    },
+    "eredetisegi_nyilatkozat": {
+      "status": "Írás",
+      "clickup_list_id": "901515667958",
+      "drive_url": null
+    },
+    "temavezeto_nyilatkozat": {
+      "status": "Írás",
+      "clickup_list_id": "901515667958",
+      "drive_url": null
     }
   }
 }
