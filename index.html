@@ -302,11 +302,27 @@
       margin:0;
     }
 
-    .status-wrap{
+    .status-wrap,
+    .line-status-box,
+    .official-status-box{
       order:3;
       margin-top:16px;
       padding-top:10px;
       border-top:1px solid var(--border);
+    }
+
+    .line-status-box,
+    .official-status-box{
+      margin-top:6px;
+      padding-top:6px;
+      border-top:none;
+    }
+
+    .official-label{
+      color:var(--tree);
+      font-size:14px;
+      line-height:1.38;
+      padding-left:18px;
     }
 
     .status-badge{
@@ -334,6 +350,11 @@
       opacity:.68;
     }
 
+    .line-status-box .progress,
+    .official-status-box .progress{
+      max-width:165px;
+    }
+
     .progress-step{
       height:6px;
       border-radius:3px;
@@ -358,7 +379,8 @@
       color:var(--text);
     }
 
-    .muted{
+    .muted,
+    .sheet-status{
       color:var(--muted);
       font-size:13px;
       line-height:1.34;
@@ -461,12 +483,7 @@
               <div class="title-wrap"><h3 class="doc-title">BEVEZETÉS</h3><span class="file-ext">.doc</span></div>
               <span class="linkout">↗</span>
             </div>
-            <div class="sublist" id="bevezetes-subtasks">
-              <div class="subitem">└─ Kutatás célja</div>
-              <div class="subitem">└─ Módszertan</div>
-              <div class="subitem">└─ Tézisek EN</div>
-              <div class="subitem">└─ Tézisek HU</div>
-            </div>
+            <div class="sublist" id="bevezetes-subtasks"></div>
             <div class="chapter-footer"><span>Készültségi állapot</span><span class="chapter-percent" data-percent-target="bevezetes"></span></div>
             <div class="status-wrap" data-status-target="bevezetes"></div>
           </a>
@@ -482,6 +499,7 @@
               <span class="linkout">↗</span>
             </div>
             <div class="sublist">
+              <div class="subitem">└─ A könyv könyvségéről</div>
               <div class="subitem">└─ Könyvművészetektől a művészkönyvekig: történeti és fogalmi áttekintés</div>
               <div class="subitem">└─ Közös nevezőn: a művészkönyv meghatározásának dilemmái</div>
             </div>
@@ -553,17 +571,17 @@
             <a class="sheet-link" href="https://docs.google.com/spreadsheets/d/1RKhpiXYJ2p-Uj8Ru4dxih3w9XGDNUey2-RhtvvWEuUg/edit?usp=drive_link" target="_blank" rel="noopener noreferrer">
               <span>└─ Adatmodell / struktúra .xls</span><span class="arrow">↗</span>
             </a>
-            <div class="sheet-status" data-status-line="adatmodell_struktura">[státusz]</div>
+            <div class="sheet-status line-status-box" data-status-line="adatmodell_struktura"></div>
 
             <a class="sheet-link" href="https://docs.google.com/spreadsheets/d/1U0zy34q7uEbvOQ-bO1sJGNpxjH0OyYTDTQiYrNavRUQ/edit?usp=drive_link" target="_blank" rel="noopener noreferrer">
               <span>└─ Terminológiai szótár .xls</span><span class="arrow">↗</span>
             </a>
-            <div class="sheet-status" data-status-line="terminologiai_szotar">[státusz]</div>
+            <div class="sheet-status line-status-box" data-status-line="terminologiai_szotar"></div>
 
             <a class="sheet-link" href="https://docs.google.com/spreadsheets/d/1-HJLveKob13v3S-Dwkl5k8qLXWO-TlexUVVaOG8n1Fc/edit?usp=drive_link" target="_blank" rel="noopener noreferrer">
               <span>└─ Mezőlista / attribútumok .xls</span><span class="arrow">↗</span>
             </a>
-            <div class="sheet-status" data-status-line="mezolista_attributumok">[státusz]</div>
+            <div class="sheet-status line-status-box" data-status-line="mezolista_attributumok"></div>
           </article>
         </div>
       </div>
@@ -588,12 +606,12 @@
             <a class="sheet-link" href="#" target="_blank" rel="noopener noreferrer">
               <span>└─ Mapping xls</span><span class="arrow">↗</span>
             </a>
-            <div class="sheet-status" data-status-line="ontologiai_mapping">[státusz]</div>
+            <div class="sheet-status line-status-box" data-status-line="ontologiai_mapping"></div>
 
             <a class="sheet-link" href="#" target="_blank" rel="noopener noreferrer">
               <span>└─ Szótár xls</span><span class="arrow">↗</span>
             </a>
-            <div class="sheet-status" data-status-line="szotarak_xls">[státusz]</div>
+            <div class="sheet-status line-status-box" data-status-line="szotarak_xls"></div>
           </article>
         </div>
       </div>
@@ -630,7 +648,26 @@
               <div class="title-wrap"><h3 class="group-title">FORRÁSOK</h3></div>
               <span class="linkout">↗</span>
             </div>
-            <div class="muted" data-status-line="forrasok">[státusz]</div>
+            <div class="sheet-status line-status-box" data-status-line="forrasok"></div>
+          </article>
+
+          <article class="group-box">
+            <div class="group-head">
+              <div class="title-wrap"><h3 class="group-title">HIVATALOS</h3></div>
+              <span class="linkout">↗</span>
+            </div>
+
+            <div class="official-label">└─ Szakmai életút</div>
+            <div class="official-status-box" data-status-line="szakmai_eletut"></div>
+
+            <div class="official-label">└─ Publikációs jegyzék MTMT alapján</div>
+            <div class="official-status-box" data-status-line="publikacios_jegyzek"></div>
+
+            <div class="official-label">└─ Eredetiség-nyilatkozat</div>
+            <div class="official-status-box" data-status-line="eredetisegi_nyilatkozat"></div>
+
+            <div class="official-label">└─ Témavezetői nyilatkozat</div>
+            <div class="official-status-box" data-status-line="temavezeto_nyilatkozat"></div>
           </article>
         </div>
       </div>
@@ -654,9 +691,10 @@
       'Fejezet írása': 'Írás',
       'írás': 'Írás',
       'Írás': 'Írás',
-      'Szerkesztés alatt': 'Szerkesztés',
-      'szerkesztés': 'Szerkesztés',
+      'Szerkesztés alatt': 'Szerkesztés alatt',
+      'szerkesztés alatt': 'Szerkesztés alatt',
       'Szerkesztés': 'Szerkesztés',
+      'szerkesztés': 'Szerkesztés',
       'Vizualizálás / ábra': 'Vizualizálás / ábra',
       'vizualizálás / ábra': 'Vizualizálás / ábra',
       'Források ellenőrzése': 'Források ellenőrzése',
@@ -670,6 +708,7 @@
     const statusConfig = {
       'Írás': { className:'status-writing', label:'Írás', color:'var(--status-writing)', order:1 },
       'Szerkesztés': { className:'status-editing', label:'Szerkesztés', color:'var(--status-editing)', order:2 },
+      'Szerkesztés alatt': { className:'status-editing', label:'Szerkesztés alatt', color:'var(--status-editing)', order:2 },
       'Vizualizálás / ábra': { className:'status-visual', label:'Vizualizálás / ábra', color:'var(--status-visual)', order:3 },
       'Források ellenőrzése': { className:'status-sources', label:'Források ellenőrzése', color:'var(--status-sources)', order:4 },
       'Témavezetői ellenőrzés': { className:'status-supervisor', label:'Témavezetői ellenőrzés', color:'var(--status-supervisor)', order:5 },
@@ -699,8 +738,13 @@
 
     function renderStatusLine(node, value) {
       const normalized = normalizeStatus(value);
-      if (!node || !normalized) return;
-      node.textContent = normalized;
+      const config = statusConfig[normalized];
+      if (!node) return;
+      if (config) {
+        node.innerHTML = badgeMarkup(config) + progressMarkup(config);
+      } else if (normalized) {
+        node.textContent = normalized;
+      }
     }
 
     function renderBevezetesSubtasks(subtasks) {
