@@ -40,28 +40,28 @@
   },
   "cards": {
     "tartalomjegyzek": {
-      "status": "Szerkesztés alatt",
+      "status": "Szerkesztés",
       "clickup": null,
       "drive_url": "https://docs.google.com/document/d/1F6q8F76mbulV_72u_h4EMSwgIAIQt7ZVpAQMvUgZeRE/edit?usp=drive_link"
     },
     "bevezetes": {
-      "status": "Szerkesztés alatt",
+      "status": "Témavezetői ellenőrzés",
       "clickup_list_id": "901522873259",
       "drive_url": "https://docs.google.com/document/d/11AmnHI4KuBlvCmqBUs6-oy5JdU-uj7W-lgc-LD62dfU/edit?usp=drivesdk",
       "subtasks": [
-        { "name": "Kutatás célja", "status": "Kész" },
-        { "name": "Módszertan", "status": "Kész" },
+        { "name": "Kutatás célja", "status": "Témavezetői ellenőrzés" },
+        { "name": "Módszertan", "status": "Témavezetői ellenőrzés" },
         { "name": "Tézisek EN", "status": "Írás" },
-        { "name": "Tézisek HU", "status": "Kész" }
+        { "name": "Tézisek HU", "status": "Témavezetői ellenőrzés" }
       ]
     },
     "konyv_fogalmanak_ujrairasa": {
-      "status": "Vizualizálás / ábra",
+      "status": "Témavezetői ellenőrzés",
       "clickup_list_id": "901522873265",
       "drive_url": "https://docs.google.com/document/d/1bJntt0aP4zoG_xikmvwsJpbJOXDjO0Ckel-L0IXPWTQ/edit?usp=drivesdk"
     },
     "melyik_polcra": {
-      "status": "Vizualizálás / ábra",
+      "status": "Témavezetői ellenőrzés",
       "clickup_list_id": "901522873333",
       "drive_url": "https://docs.google.com/document/d/1lpZIcyKgB2-T1dI2t21etthyG7IH7nv_R7pQkzaxWWw/edit?usp=drivesdk"
     },
@@ -71,17 +71,17 @@
       "drive_url": null
     },
     "vizsgalati_szempontok": {
-      "status": "Szerkesztés alatt",
+      "status": "Szerkesztés",
       "clickup_list_id": "901522873673",
       "drive_url": "https://docs.google.com/document/d/1I-BpEzZoF8fPEL3qQZcwqxC3mCt_YoWNJdOUt81vmWs/edit?usp=drivesdk"
     },
     "adatmodell_javaslat": {
-      "status": "Szerkesztés",
+      "status": "Szerkesztés alatt",
       "clickup_list_id": "901522877835",
       "drive_url": "https://docs.google.com/document/d/15rEBwdNXIpPIF0aV-otxoagjN67ogJ7wg2wsEpSvlg8/edit?usp=drive_link"
     },
     "ontologia_fejezet": {
-      "status": "Szerkesztés alatt",
+      "status": "Szerkesztés",
       "clickup_list_id": "901522877838",
       "drive_url": null
     },
@@ -118,17 +118,17 @@
       "drive_url": "https://docs.google.com/spreadsheets/d/1-HJLveKob13v3S-Dwkl5k8qLXWO-TlexUVVaOG8n1Fc/edit?usp=drive_link"
     },
     "ontologiai_mapping": {
-      "status": "[státusz]",
+      "status": "Szerkesztés",
       "clickup_list_id": "901522877838",
       "drive_url": null
     },
     "szotarak_xls": {
-      "status": "[státusz]",
+      "status": "Szerkesztés",
       "clickup_list_id": "901522877838",
       "drive_url": null
     },
     "forrasok": {
-      "status": "[státusz] kész? igen/nem",
+      "status": "Szerkesztés",
       "clickup_list_id": "901522877842",
       "drive_url": null
     },
