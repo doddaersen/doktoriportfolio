@@ -1,0 +1,46 @@
+{
+  "status_palette": {
+    "írás": "#F26076",
+    "szerkesztés": "#FFD150",
+    "vizualizálás / ábra": "#FF9760",
+    "témavezetői ellenőrzés": "#65CCA9",
+    "kész": "#458B73"
+  },
+  "sections": {
+    "bevezetes": { "label": "2. státusz: Készültségi állapot 33%ban" },
+    "elmelet": { "label": "3. státusz: Készültségi állapot %ban" },
+    "esettanulmanyok": { "label": "4. státusz: Készültségi állapot %ban" },
+    "modell": { "label": "5. státusz: Készültségi állapot %ban" },
+    "ontologia": { "label": "6. státusz: Készültségi állapot %ban" },
+    "osszegzes": { "label": "7. státusz: Készültségi állapot %ban" }
+  },
+  "cards": {
+    "tartalomjegyzek": { "status": "Szerkesztés alatt" },
+    "bevezetes": {
+      "status": "Szerkesztés alatt",
+      "subtasks": [
+        { "name": "Kutatás célja", "status": "Kész" },
+        { "name": "Módszertan", "status": "Kész" },
+        { "name": "Tézisek EN", "status": "Írás" },
+        { "name": "Tézisek HU", "status": "Kész" }
+      ]
+    },
+    "konyv_fogalmanak_ujrairasa": { "status": "Vizualizálás / ábra" },
+    "melyik_polcra": { "status": "Vizualizálás / ábra" },
+    "regi_technikak": { "status": "Szerkesztés alatt" },
+    "vizsgalati_szempontok": { "status": "Szerkesztés alatt" },
+    "adatmodell_javaslat": { "status": "Szerkesztés" },
+    "ontologia_fejezet": { "status": "Szerkesztés alatt" },
+    "osszegzes_tavlatok": { "status": "Írás" },
+    "zaro_gondolatok": { "status": "Írás" },
+    "koszonetnyilvanitas": { "status": "Írás" }
+  },
+  "lines": {
+    "adatmodell_struktura": { "status": "Témavezetői ellenőrzés" },
+    "terminologiai_szotar": { "status": "Témavezetői ellenőrzés" },
+    "mezolista_attributumok": { "status": "Témavezetői ellenőrzés" },
+    "ontologiai_mapping": { "status": "[státusz]" },
+    "szotarak_xls": { "status": "[státusz]" },
+    "forrasok": { "status": "[státusz] kész? igen/nem" }
+  }
+}
