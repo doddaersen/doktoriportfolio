@@ -61,6 +61,25 @@
       gap:8px;
     }
 
+    .hero-column{
+      grid-column:1;
+      grid-row:1;
+    }
+
+    .top-spacer{
+      grid-column:2 / -1;
+      grid-row:1;
+      min-height:118px;
+      border:0.5px solid var(--border);
+      border-radius:var(--radius);
+      background:#fff;
+    }
+
+    .research-column,
+    .content-column{
+      grid-row:2;
+    }
+
     .hero-card{
       display:block;
       position:relative;
@@ -191,6 +210,14 @@
       border-right:2px solid #fff;
       border-bottom:2px solid #fff;
       transform:translateX(-50%) rotate(45deg);
+    }
+
+    .research-toggle{
+      padding:12px;
+    }
+
+    .research-toggle::after{
+      display:none;
     }
 
     .section-toggle:hover{ filter:brightness(.98); }
@@ -442,6 +469,14 @@
     @media (max-width:1560px){
       .matrix{ grid-template-columns:repeat(4,minmax(220px,1fr)); }
       .page{ max-width:1280px; }
+      .hero-column,
+      .top-spacer,
+      .research-column,
+      .content-column{
+        grid-column:auto;
+        grid-row:auto;
+      }
+      .top-spacer{ display:none; }
     }
 
     @media (max-width:980px){
@@ -463,7 +498,7 @@
 <body>
   <main class="page">
     <div class="matrix">
-      <div class="column">
+      <div class="column hero-column">
         <div class="hero-card">
           <div class="hero-top">
             <span class="hello">HELLO</span>
@@ -484,19 +519,22 @@
           </div>
           <div class="hero-bottom"></div>
         </div>
-
-        <article class="group-box">
-          <div class="group-head">
-            <div class="title-wrap"><h3 class="group-title">A KUTATÁS</h3></div>
-          </div>
-
-          <div class="line-item">
-            <div class="line-label">↳ a művészkönyvek könyvtári tudásreprezentációjáról szól</div>
-          </div>
-        </article>
       </div>
 
-      <div class="column">
+      <div class="top-spacer" aria-hidden="true"></div>
+
+      <div class="column research-column">
+        <button class="section-toggle research-toggle active" data-target="kutatas-panel"><span class="section-label">A KUTATÁS</span></button>
+        <div class="panel open" id="kutatas-panel">
+          <article class="group-box">
+            <div class="line-item">
+              <div class="line-label">↳ a művészkönyvek könyvtári tudásreprezentációjáról szól</div>
+            </div>
+          </article>
+        </div>
+      </div>
+
+      <div class="column content-column">
         <button class="section-toggle active" data-target="bevezetes-panel"><span class="section-label">BEVEZETÉS</span></button>
         <div class="panel open" id="bevezetes-panel">
           <a class="card" href="https://docs.google.com/document/d/1F6q8F76mbulV_72u_h4EMSwgIAIQt7ZVpAQMvUgZeRE/edit?usp=drive_link" target="_blank" rel="noopener noreferrer">
@@ -519,7 +557,7 @@
         </div>
       </div>
 
-      <div class="column">
+      <div class="column content-column">
         <button class="section-toggle active" data-target="elmelet-panel"><span class="section-label">ELMÉLET</span></button>
         <div class="panel open" id="elmelet-panel">
           <a class="card" href="https://docs.google.com/document/d/1bJntt0aP4zoG_xikmvwsJpbJOXDjO0Ckel-L0IXPWTQ/edit?usp=drive_link" target="_blank" rel="noopener noreferrer">
@@ -562,7 +600,7 @@
         </div>
       </div>
 
-      <div class="column">
+      <div class="column content-column">
         <button class="section-toggle active" data-target="esettanulmanyok-panel"><span class="section-label">ESETTANULMÁNYOK</span></button>
         <div class="panel open" id="esettanulmanyok-panel">
           <a class="card" href="https://docs.google.com/document/d/1I-BpEzZoF8fPEL3qQZcwqxC3mCt_YoWNJdOUt81vmWs/edit?usp=drivesdk" target="_blank" rel="noopener noreferrer">
@@ -580,7 +618,7 @@
         </div>
       </div>
 
-      <div class="column">
+      <div class="column content-column">
         <button class="section-toggle active" data-target="modell-panel"><span class="section-label">MODELL</span></button>
         <div class="panel open" id="modell-panel">
           <a class="card" href="https://docs.google.com/document/d/15rEBwdNXIpPIF0aV-otxoagjN67ogJ7wg2wsEpSvlg8/edit?usp=drive_link" target="_blank" rel="noopener noreferrer">
@@ -621,7 +659,7 @@
         </div>
       </div>
 
-      <div class="column">
+      <div class="column content-column">
         <button class="section-toggle active" data-target="ontologia-panel"><span class="section-label">ONTOLÓGIA</span></button>
         <div class="panel open" id="ontologia-panel">
           <a class="card" href="#" target="_blank" rel="noopener noreferrer">
@@ -655,7 +693,7 @@
         </div>
       </div>
 
-      <div class="column">
+      <div class="column content-column">
         <button class="section-toggle active" data-target="osszegzes-panel"><span class="section-label">ÖSSZEGZÉS</span></button>
         <div class="panel open" id="osszegzes-panel">
           <a class="card" href="#" target="_blank" rel="noopener noreferrer">
