@@ -165,14 +165,16 @@
       border:0.5px solid var(--border);
       background:var(--magenta);
       border-radius:var(--radius);
-      padding:12px 12px 26px;
+      padding:12px 12px 30px;
       cursor:pointer;
       transition:.15s;
       width:100%;
       position:relative;
-      display:block;
-      height:118px;
-      text-align:left;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      min-height:118px;
+      text-align:center;
       box-shadow:none;
       color:#fff;
     }
@@ -181,24 +183,22 @@
       content:'';
       position:absolute;
       left:50%;
-      bottom:8px;
-      transform:translateX(-50%);
-      width:16px;
-      height:2px;
-      background:#fff;
-    }
-
-    .section-toggle:not(.active)::after{
+      bottom:12px;
       width:10px;
-      opacity:.85;
+      height:10px;
+      border-right:2px solid #fff;
+      border-bottom:2px solid #fff;
+      transform:translateX(-50%) rotate(45deg);
     }
 
     .section-toggle:hover{ filter:brightness(.98); }
 
     .section-label{
       display:block;
+      width:100%;
       padding:0;
       color:#fff;
+      text-align:center;
       font-family:'Barlow', Arial, Helvetica, sans-serif;
       font-weight:700;
       text-transform:uppercase;
@@ -289,16 +289,36 @@
       display:grid;
       gap:4px;
       margin:4px 0 0;
-      padding:0 0 0 18px;
+      padding:0;
       border-top:none;
       font-size:14px;
       line-height:1.38;
     }
 
-    .subitem{
+    .subitem,
+    .line-label,
+    .official-label{
       color:var(--tree);
-      padding:0;
-      margin:0;
+      font-size:14px;
+      line-height:1.38;
+      display:grid;
+      grid-template-columns:18px 1fr;
+      align-items:start;
+      column-gap:0;
+    }
+
+    .subitem{ margin:0; }
+    .line-label,
+    .official-label{ padding-left:18px; }
+
+    .tree-prefix{
+      display:block;
+      width:18px;
+    }
+
+    .tree-text{
+      display:block;
+      min-width:0;
     }
 
     .status-wrap{
@@ -319,18 +339,10 @@
     .line-item:last-child,
     .official-item:last-child{ border-bottom:0; padding-bottom:0; }
 
-    .line-label,
-    .official-label{
-      color:var(--tree);
-      font-size:14px;
-      line-height:1.38;
-      padding-left:18px;
-    }
-
     .line-status-box,
     .official-status-box{
       margin-top:6px;
-      padding-left:18px;
+      padding-left:36px;
     }
 
     .status-badge{
@@ -438,7 +450,7 @@
 
     @media (max-width:560px){
       .matrix{ grid-template-columns:1fr; }
-      .section-toggle{ height:auto; min-height:118px; }
+      .section-toggle{ min-height:118px; }
       .hero-card{ height:auto; min-height:118px; transform:none; }
       .hero-body{ height:auto; min-height:70px; }
       .card{ min-height:unset; }
@@ -768,6 +780,15 @@
       }
     }
 
+    function formatTreeItems() {
+      document.querySelectorAll('.subitem, .line-label, .official-label').forEach(node => {
+        const raw = node.textContent.trim();
+        const match = raw.match(/^(└─)\s*(.*)$/);
+        if (!match) return;
+        node.innerHTML = `<span class="tree-prefix">${match[1]}</span><span class="tree-text">${match[2]}</span>`;
+      });
+    }
+
     function renderBevezetesSubtasks(subtasks) {
       const container = document.getElementById('bevezetes-subtasks');
       if (!container || !Array.isArray(subtasks)) return;
@@ -795,8 +816,12 @@
         if (data.cards?.bevezetes?.subtasks) {
           renderBevezetesSubtasks(data.cards.bevezetes.subtasks);
         }
+
+        formatTreeItems();
       })
-      .catch(() => {});
+      .catch(() => {
+        formatTreeItems();
+      });
   </script>
 </body>
 </html>
