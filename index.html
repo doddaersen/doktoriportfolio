@@ -251,7 +251,7 @@
     .research-toggle{
       padding:12px 28px 12px 12px;
       justify-content:center;
-      align-items:stretch;
+      align-items:center;
       text-align:center;
     }
 
@@ -266,10 +266,7 @@
     }
 
     .research-toggle-inner{
-      display:grid;
-      grid-template-rows:40px 1fr 28px;
-      align-items:start;
-      justify-items:center;
+      position:relative;
       width:100%;
       height:100%;
       max-width:100%;
@@ -277,9 +274,11 @@
     }
 
     .research-title{
-      display:flex;
-      align-items:flex-start;
-      justify-content:center;
+      position:absolute;
+      left:50%;
+      top:50%;
+      transform:translate(-50%,-50%);
+      display:block;
       width:100%;
       color:#fff;
       text-align:center;
@@ -290,14 +289,18 @@
       font-size:20px;
       line-height:.96;
       margin:0;
-      padding-top:0;
+      pointer-events:none;
     }
 
     .research-desc{
+      position:absolute;
+      left:50%;
+      bottom:2px;
+      transform:translateX(-50%);
       display:block;
-      align-self:end;
       max-width:92%;
-      color:rgba(255,255,255,.78);
+      width:100%;
+      color:rgba(255,255,255,.76);
       text-align:center;
       font-size:11px;
       line-height:1.15;
@@ -305,6 +308,7 @@
       text-transform:none;
       letter-spacing:0;
       margin:0;
+      pointer-events:none;
     }
 
     .section-toggle:hover{ filter:brightness(.98); }
