@@ -80,7 +80,18 @@
       grid-row:2;
     }
 
-    .hero-card{
+    .hero-card{.hero-top-video{
+  height:40px;
+  overflow:hidden;
+  background:var(--magenta);
+}
+
+.hero-top-video-el{
+  display:block;
+  width:100%;
+  height:40px;
+  object-fit:cover;
+}
       display:block;
       position:relative;
       border:0.5px solid var(--border);
@@ -482,14 +493,18 @@
     <div class="matrix">
       <div class="column hero-column">
         <div class="hero-card">
-          <div class="hero-body">
-            <div class="hero-name">
-              <span>Dorottya Kun</span>
-              <span class="phd-wrap">
-                <img class="phd-gif" src="https://media1.tenor.com/m/Pq1cZiuhlEEAAAAC/rajinikanth.gif" alt="">
-                <span class="phd">PhD</span>
-              </span>
-            </div>
+  <div class="hero-top-video">
+    <video class="hero-top-video-el" autoplay muted loop playsinline preload="auto">
+      <source src="https://konyvtar.mome.hu/loadingphd.mp4" type="video/mp4">
+    </video>
+  </div>
+
+  <div class="hero-body">
+    ...
+  </div>
+
+  <div class="hero-bottom"></div>
+</div>
             <div class="hero-links">
               <a href="https://docs.google.com/document/d/18FXVh4BCtGTkoiGdQIMt8iZiftQctT3OUiI9afmVnI0/edit?usp=drive_link" target="_blank" rel="noopener noreferrer">CV</a>
               <a href="#kontakt">Kontakt</a>
