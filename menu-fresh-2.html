@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Doktori portfólió – menü</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@600;700&family=Hanken+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --magenta:#f72464;
+      --bg:#fafafa;
+      --surface:#ffffff;
+      --text:#1f1f1f;
+      --muted:#6b6b6b;
+      --border:rgba(0,0,0,.05);
+      --radius:6px;
+      --soft-pink:#f8edef;
+    }
+
+    *{box-sizing:border-box;}
+    html{scroll-behavior:smooth;}
+    body{
+      margin:0;
+      background:var(--bg);
+      color:var(--text);
+      font-family:'Hanken Grotesk', Inter, Arial, Helvetica, sans-serif;
+    }
+
+    a{color:inherit; text-decoration:none;}
+
+    .page{
+      max-width:1780px;
+      margin:0 auto;
+      padding:24px 12px 40px;
+    }
+
+    .site-header{
+      display:flex;
+      align-items:flex-end;
+      justify-content:space-between;
+      gap:20px;
+      margin-bottom:14px;
+      padding:0 2px;
+    }
+
+    .site-title-wrap{
+      display:flex;
+      flex-direction:column;
+      gap:6px;
+    }
+
+    .site-kicker{
+      font-size:11px;
+      line-height:1;
+      text-transform:uppercase;
+      letter-spacing:.12em;
+      color:var(--muted);
+    }
+
+    .site-title{
+      margin:0;
+      font-family:'Barlow', Arial, Helvetica, sans-serif;
+      font-weight:700;
+      font-size:34px;
+      line-height:.95;
+      text-transform:uppercase;
+      letter-spacing:.03em;
+    }
+
+    .site-subtitle{
+      margin:0;
+      color:var(--muted);
+      font-size:14px;
+      line-height:1.35;
+      max-width:720px;
+    }
+
+    .site-accent{
+      width:88px;
+      height:6px;
+      border-radius:999px;
+      background:var(--magenta);
+      flex:0 0 auto;
+      margin-bottom:6px;
+    }
+
+    .matrix{
+      display:grid;
+      grid-template-columns:repeat(8,minmax(185px,1fr));
+      gap:10px;
+      align-items:start;
+    }
+
+    .column{
+      display:flex;
+      flex-direction:column;
+      gap:8px;
+    }
+
+    .gif-card{
+      width:100%;
+      min-height:118px;
+      border:0.5px solid var(--border);
+      border-radius:var(--radius);
+      background:#fff;
+      overflow:hidden;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:0;
+    }
+
+    .gif-card img{
+      display:block;
+      width:100%;
+      height:118px;
+      object-fit:cover;
+      background:var(--magenta);
+    }
+
+    .menu-button{
+      appearance:none;
+      width:100%;
+      min-height:118px;
+      border:0.5px solid var(--border);
+      border-radius:var(--radius);
+      background:var(--magenta);
+      color:#fff;
+      cursor:pointer;
+      padding:14px 12px 32px;
+      position:relative;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+      box-shadow:none;
+      transition:.15s;
+    }
+
+    .menu-button:hover{ filter:brightness(.98); }
+
+    .menu-button::after{
+      content:'';
+      position:absolute;
+      left:50%;
+      bottom:12px;
+      width:10px;
+      height:10px;
+      border-right:2px solid #fff;
+      border-bottom:2px solid #fff;
+      transform:translateX(-50%) rotate(45deg);
+    }
+
+    .menu-button.active::after{
+      transform:translateX(-50%) rotate(-135deg);
+      bottom:10px;
+    }
+
+    .menu-label{
+      font-family:'Barlow', Arial, Helvetica, sans-serif;
+      font-weight:700;
+      text-transform:uppercase;
+      letter-spacing:.045em;
+      font-size:20px;
+      line-height:.96;
+      display:block;
+      width:100%;
+    }
+
+    .panel{
+      display:none;
+      background:var(--surface);
+      border:0.5px solid var(--border);
+      border-radius:var(--radius);
+      padding:10px;
+    }
+
+    .panel.open{ display:block; }
+
+    .placeholder{
+      background:#fff;
+      border:0.5px solid var(--border);
+      border-radius:var(--radius);
+      min-height:118px;
+      padding:12px;
+      display:flex;
+      flex-direction:column;
+      justify-content:flex-start;
+      gap:8px;
+    }
+
+    .placeholder-head{
+      margin:-12px -12px 0;
+      padding:12px;
+      background:var(--soft-pink);
+      border-top-left-radius:var(--radius);
+      border-top-right-radius:var(--radius);
+      font-family:'Barlow', Arial, Helvetica, sans-serif;
+      font-weight:700;
+      text-transform:uppercase;
+      letter-spacing:.035em;
+      font-size:15px;
+      line-height:1.2;
+    }
+
+    .placeholder p{
+      margin:0;
+      color:var(--muted);
+      font-size:14px;
+      line-height:1.4;
+    }
+
+    @media (max-width:1560px){
+      .matrix{ grid-template-columns:repeat(4,minmax(220px,1fr)); }
+      .page{ max-width:1280px; }
+      .site-title{ font-size:30px; }
+    }
+
+    @media (max-width:980px){
+      .page{ padding:24px 14px 40px; }
+      .matrix{ grid-template-columns:repeat(2,minmax(180px,1fr)); }
+      .site-header{ flex-direction:column; align-items:flex-start; }
+      .site-accent{ margin-bottom:0; }
+    }
+
+    @media (max-width:560px){
+      .matrix{ grid-template-columns:1fr; }
+      .site-title{ font-size:26px; }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <header class="site-header">
+      <div class="site-title-wrap">
+        <div class="site-kicker">Doktori portfólió</div>
+        <h1 class="site-title">Művészkönyvek könyvtári tudásreprezentációja</h1>
+        <p class="site-subtitle">Friss menürendszer a fejezetekhez, blokkos felépítésben, külön nyitható magenta fejlécekkel.</p>
+      </div>
+      <div class="site-accent" aria-hidden="true"></div>
+    </header>
+
+    <div class="matrix">
+      <div class="column">
+        <div class="gif-card">
+          <img src="./phdinprogress.gif" alt="PhD in progress">
+        </div>
+      </div>
+
+      <div class="column">
+        <button class="menu-button active" data-target="bevezetes-panel"><span class="menu-label">Bevezetés</span></button>
+        <div class="panel open" id="bevezetes-panel">
+          <div class="placeholder">
+            <div class="placeholder-head">Bevezetés</div>
+            <p>Itt lehet majd a bevezetéshez tartozó első kártyákat vagy linkeket felvenni.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="column">
+        <button class="menu-button active" data-target="elmelet-panel"><span class="menu-label">Elmélet</span></button>
+        <div class="panel open" id="elmelet-panel">
+          <div class="placeholder">
+            <div class="placeholder-head">Elmélet</div>
+            <p>Itt lehet majd az elméleti fejezetekhez tartozó tartalmakat felépíteni.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="column">
+        <button class="menu-button active" data-target="esettanulmanyok-panel"><span class="menu-label">Esettanulmányok</span></button>
+        <div class="panel open" id="esettanulmanyok-panel">
+          <div class="placeholder">
+            <div class="placeholder-head">Esettanulmányok</div>
+            <p>Itt lehet majd az esettanulmányok blokk tartalmát felépíteni.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="column">
+        <button class="menu-button active" data-target="modell-panel"><span class="menu-label">Modell</span></button>
+        <div class="panel open" id="modell-panel">
+          <div class="placeholder">
+            <div class="placeholder-head">Modell</div>
+            <p>Itt lehet majd az adatmodellhez tartozó dobozokat és linkeket elhelyezni.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="column">
+        <button class="menu-button active" data-target="ontologia-panel"><span class="menu-label">Ontológia</span></button>
+        <div class="panel open" id="ontologia-panel">
+          <div class="placeholder">
+            <div class="placeholder-head">Ontológia</div>
+            <p>Itt lehet majd az ontológiai blokk kártyáit felépíteni.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="column">
+        <button class="menu-button active" data-target="osszegzes-panel"><span class="menu-label">Összegzés</span></button>
+        <div class="panel open" id="osszegzes-panel">
+          <div class="placeholder">
+            <div class="placeholder-head">Összegzés</div>
+            <p>Itt lehet majd az összegzéshez és hivatalos anyagokhoz tartozó elemeket felvenni.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="column">
+        <button class="menu-button active" data-target="kutatas-panel"><span class="menu-label">A kutatás</span></button>
+        <div class="panel open" id="kutatas-panel">
+          <div class="placeholder">
+            <div class="placeholder-head">A kutatás</div>
+            <p>Itt lehet majd a rövid kutatási összefoglaló blokk helye.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    document.querySelectorAll('.menu-button').forEach(button => {
+      button.addEventListener('click', () => {
+        const panel = document.getElementById(button.dataset.target);
+        if (!panel) return;
+        const open = panel.classList.contains('open');
+        panel.classList.toggle('open');
+        button.classList.toggle('active', !open);
+      });
+    });
+  </script>
+</body>
+</html>
