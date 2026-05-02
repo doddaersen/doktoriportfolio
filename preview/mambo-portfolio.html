@@ -95,6 +95,10 @@
         button.classList.toggle('active');
       });
     });
+
+    document.querySelectorAll('a[href="#"]').forEach(link => {
+      link.addEventListener('click', event => event.preventDefault());
+    });
   </script>
 </body>
 </html>
