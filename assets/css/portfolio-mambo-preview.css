@@ -22,7 +22,7 @@ body{
 a{ color:inherit; text-decoration:none; }
 
 .page{
-  max-width:1580px;
+  max-width:1720px;
   margin:0 auto;
   padding:34px 24px 56px;
 }
@@ -131,7 +131,7 @@ a{ color:inherit; text-decoration:none; }
 
 .matrix{
   display:grid;
-  grid-template-columns:repeat(6,minmax(0,1fr));
+  grid-template-columns:repeat(7,minmax(0,1fr));
   gap:12px;
   align-items:start;
 }
@@ -185,7 +185,7 @@ a{ color:inherit; text-decoration:none; }
   font-weight:700;
   text-transform:uppercase;
   letter-spacing:-.018em;
-  font-size:clamp(20px,1.45vw,24px);
+  font-size:clamp(18px,1.25vw,22px);
   line-height:.94;
   max-width:100%;
   overflow-wrap:anywhere;
@@ -241,7 +241,7 @@ a{ color:inherit; text-decoration:none; }
 .doc-title,
 .group-title{
   font-family:'Barlow', Arial, Helvetica, sans-serif;
-  font-size:14px;
+  font-size:13px;
   line-height:1.04;
   font-weight:700;
   text-transform:uppercase;
@@ -353,10 +353,12 @@ a{ color:inherit; text-decoration:none; }
   background:rgba(255,255,255,.45);
 }
 
-@media (max-width:1380px){
-  .section-label{ font-size:clamp(18px,1.35vw,22px); }
+@media (max-width:1500px){
+  .page{ max-width:1580px; }
+  .matrix{ gap:10px; }
+  .section-label{ font-size:clamp(17px,1.15vw,20px); }
   .doc-title,
-  .group-title{ font-size:13px; }
+  .group-title{ font-size:12.5px; }
 }
 
 @media (max-width:1280px){
@@ -364,6 +366,8 @@ a{ color:inherit; text-decoration:none; }
   .thesis-title{ font-size:42px; }
   .matrix{ grid-template-columns:repeat(3,minmax(180px,1fr)); }
   .section-label{ font-size:24px; }
+  .doc-title,
+  .group-title{ font-size:13px; }
 }
 
 @media (max-width:760px){
