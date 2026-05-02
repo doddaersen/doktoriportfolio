@@ -189,6 +189,7 @@ a{ color:inherit; text-decoration:none; }
 
 .section-toggle.active::before{ background:var(--accent); }
 .section-toggle:hover{ background:#fdfdf9; }
+.section-toggle:not(.active) .section-arrow{ transform:rotate(-90deg); }
 
 .section-index{
   font-size:10px;
@@ -213,6 +214,7 @@ a{ color:inherit; text-decoration:none; }
   font-size:16px;
   line-height:1;
   align-self:flex-end;
+  transition:transform .15s ease;
 }
 
 .panel{ padding:9px; }
@@ -278,6 +280,31 @@ a{ color:inherit; text-decoration:none; }
   color:#111;
   font-size:12px;
   line-height:1;
+}
+
+a[href="#"]{
+  cursor:not-allowed;
+}
+
+a[href="#"] .linkout,
+a[href="#"] .arrow{
+  color:var(--muted);
+  display:inline-flex;
+  align-items:center;
+  gap:5px;
+}
+
+a[href="#"] .linkout::before,
+a[href="#"] .arrow::before{
+  content:'készül';
+  border:1px solid var(--line);
+  background:var(--tag);
+  padding:3px 5px 2px;
+  font-size:9px;
+  line-height:1;
+  letter-spacing:.06em;
+  text-transform:uppercase;
+  color:var(--muted);
 }
 
 .sublist,
