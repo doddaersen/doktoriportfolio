@@ -22,8 +22,9 @@ body{
 a{ color:inherit; text-decoration:none; }
 
 .page{
-  max-width:1580px;
-  margin:0 auto;
+  width:100%;
+  max-width:none;
+  margin:0;
   padding:34px 24px 56px;
 }
 
@@ -32,6 +33,7 @@ a{ color:inherit; text-decoration:none; }
   grid-template-columns:minmax(245px,360px) 1fr;
   gap:16px;
   margin-bottom:16px;
+  width:100%;
 }
 
 .identity-panel,
@@ -147,6 +149,7 @@ a{ color:inherit; text-decoration:none; }
   grid-template-columns:repeat(6,minmax(0,1fr));
   gap:12px;
   align-items:start;
+  width:100%;
 }
 
 .column{ min-width:0; }
@@ -367,7 +370,6 @@ a{ color:inherit; text-decoration:none; }
 }
 
 @media (max-width:1500px){
-  .page{ max-width:1580px; }
   .matrix{ gap:10px; }
   .section-label{ font-size:clamp(18px,1.35vw,22px); }
   .doc-title,
