@@ -485,16 +485,16 @@ a[href="#"] .arrow::before{
 
 .status-badge{
   display:inline-flex;
-  border:1px solid var(--status-color,var(--line));
+  border:1px solid color-mix(in srgb, var(--status-color,var(--line)) 70%, white);
   border-radius:999px;
-  background:color-mix(in srgb, var(--status-color,var(--tag)) 28%, white);
+  background:color-mix(in srgb, var(--status-color,var(--tag)) 50%, white);
   padding:5px 8px 4px;
   font-size:var(--fs-meta);
   line-height:1;
   text-transform:uppercase;
   letter-spacing:.07em;
   font-weight:700;
-  color:var(--status-text,#222);
+  color:#2f2f2b;
 }
 
 .status-writing{ --status-color:var(--status-writing); --status-text:#fff; }
@@ -505,18 +505,6 @@ a[href="#"] .arrow::before{
 .status-done{ --status-color:var(--status-done); --status-text:#fff; }
 .status-later{ --status-color:var(--status-empty); --status-text:#5f5f58; }
 
-.status-wrap.status-writing .status-badge,
-.line-item.status-writing .status-badge{ background:var(--status-writing); }
-.status-wrap.status-editing .status-badge,
-.line-item.status-editing .status-badge{ background:var(--status-editing); }
-.status-wrap.status-visual .status-badge,
-.line-item.status-visual .status-badge{ background:var(--status-visual); }
-.status-wrap.status-sources .status-badge,
-.line-item.status-sources .status-badge{ background:var(--status-sources); }
-.status-wrap.status-supervisor .status-badge,
-.line-item.status-supervisor .status-badge{ background:var(--status-supervisor); }
-.status-wrap.status-done .status-badge,
-.line-item.status-done .status-badge{ background:var(--status-done); }
 .status-wrap.status-later .status-badge,
 .line-item.status-later .status-badge{ background:var(--tag); }
 
@@ -533,7 +521,7 @@ a[href="#"] .arrow::before{
 }
 .progress-step.filled{
   background:var(--status-color,var(--accent));
-  opacity:.5;
+  opacity:1;
 }
 
 .chapter-footer{
